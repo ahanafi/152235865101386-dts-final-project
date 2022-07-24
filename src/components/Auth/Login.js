@@ -1,4 +1,5 @@
-import { Form } from "react-bootstrap";
+import { Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import QuranLogo from '../../assets/img/quran.png';
 import './Login.css';
@@ -24,26 +25,26 @@ const StyledLabel = styled.label`
 
 const Login = () => {
     return (
-        <StyledForm className="form-signin text-center">
-            <img className="mb-4" src={QuranLogo} alt="" width="72" height="57"/>
-            <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
+        <StyledForm className='form-signin text-center'>
+            <img className='mb-4' src={QuranLogo} alt='' width='72' height='57'/>
+            <h1 className='h3 mb-3 fw-normal text-light'>Please sign in</h1>
 
-            <div className="form-floating">
-                <Form.Control type="email" id="floatingInput" placeholder="email" />
-                <StyledLabel htmlFor="floatingInput">Email address</StyledLabel>
+            <div className='form-floating'>
+                <Form.Control type='email' id='floatingInput' placeholder='email' />
+                <StyledLabel htmlFor='floatingInput'>Email address</StyledLabel>
             </div>
-            <div className="form-floating">
-                <Form.Control type="password" className="form-control" id="floatingPassword" placeholder="Password" />
-                <StyledLabel htmlFor="floatingPassword">Password</StyledLabel>
+            <div className='form-floating'>
+                <Form.Control type='password' className='form-control' id='floatingPassword' placeholder='Password' />
+                <StyledLabel htmlFor='floatingPassword'>Password</StyledLabel>
             </div>
 
-            <div className="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me" /> Remember me
+            <div className='mb-3 text-left'>
+                <label className='text-light'>
+                    Don't have account? Register <Link to='/register'>Here</Link>
                 </label>
             </div>
-            <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-            <p className="mt-5 mb-3 text-muted">&copy; {new Date().getFullYear()}</p>
+            <button className='w-100 btn btn-lg btn-primary' type='submit'>Sign in</button>
+            <p className='mt-5 mb-3 text-light'>&copy; {new Date().getFullYear()}</p>
         </StyledForm>
     );
 }
