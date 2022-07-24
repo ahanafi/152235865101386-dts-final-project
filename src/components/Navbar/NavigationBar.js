@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledNavbar = styled(Navbar)`
@@ -14,13 +15,21 @@ const StyledBrand = styled(Navbar.Brand)`
 `;
 
 const NavigationBar = () => {
+  const navigate = useNavigate();
+
   return (
     <StyledNavbar
       expand="lg"
       sticky='top'
       >
       <Container>
-        <StyledBrand className='fw-bold' href="#home">Qur&apos;an Online</StyledBrand>
+        <StyledBrand
+          className='fw-bold'
+          href="#"
+          onClick={() => navigate('/')}
+        >
+          Qur&apos;an Online
+        </StyledBrand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-md-auto">
