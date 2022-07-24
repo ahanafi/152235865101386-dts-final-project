@@ -1,5 +1,5 @@
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const SurahNumber = styled.div`
@@ -39,13 +39,15 @@ const StyledCard = styled(Card)`
 `;
 
 const SuratItem = ({ surat }) => {
+	const navigate = useNavigate();
 	return (
 		<>
 			{surat.map((item, index) => (
-				<StyledCard key={item?.number}>
-					<Card.Body
-						className='d-flex justify-content-between align-items-center no-wrap'
+				<StyledCard
+					key={item?.number}
+					onClick={() => navigate(`surah/${item?.number}`)}
 					>
+					<Card.Body className='d-flex justify-content-between align-items-center no-wrap'>
 						<div
 							className='d-flex flex-row align-items-center'
 							style={{
