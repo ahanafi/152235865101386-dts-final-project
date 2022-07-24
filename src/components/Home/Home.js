@@ -1,9 +1,11 @@
+import { useEffect } from 'react';
 import Hero from "../Hero/Hero";
 import NavigationBar from "../Navbar/NavigationBar";
 import styled from "styled-components";
 import Container from 'react-bootstrap/Container';
 import ListSurat from '../ListSurat/ListSurat';
 import Footer from '../Footer/Footer';
+import { resetBodyBackground } from "../../utils/bodyChanger";
 
 const Title = styled.h3`
     font-family: 'Quicksand', serif;
@@ -18,6 +20,11 @@ const Title = styled.h3`
 `;
 
 const Home = () => {
+
+    useEffect(() => {
+        resetBodyBackground();
+    }, []);
+
     return (
         <>
             <NavigationBar />

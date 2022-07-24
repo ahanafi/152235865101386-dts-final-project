@@ -1,7 +1,9 @@
+import { useEffect } from 'react';
 import { Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import QuranLogo from '../../assets/img/quran.png';
+import { changeBodyBackground } from '../../utils/bodyChanger';
 import './Login.css';
 
 const StyledForm = styled.form`
@@ -24,6 +26,11 @@ const StyledLabel = styled.label`
 `;
 
 const Login = () => {
+
+    useEffect(() => {
+      changeBodyBackground();
+    }, []); 
+
     return (
         <StyledForm className='form-signin text-center'>
             <img className='mb-4' src={QuranLogo} alt='' width='72' height='57'/>
@@ -34,11 +41,11 @@ const Login = () => {
                 <StyledLabel htmlFor='floatingInput'>Email address</StyledLabel>
             </div>
             <div className='form-floating'>
-                <Form.Control type='password' className='form-control' id='floatingPassword' placeholder='Password' />
+                <Form.Control style={{ borderTopLeftRadius:"0", borderTopRightRadius:"0", }} type='password' className='form-control' id='floatingPassword' placeholder='Password' />
                 <StyledLabel htmlFor='floatingPassword'>Password</StyledLabel>
             </div>
 
-            <div className='mb-3 text-left'>
+            <div className='mb-3 text-left mt-2'>
                 <label className='text-light'>
                     Don't have account? Register <Link to='/register'>Here</Link>
                 </label>

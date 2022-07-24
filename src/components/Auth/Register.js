@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import QuranLogo from '../../assets/img/quran.png';
 import './Login.css';
 import { useAuth } from '../../context/AuthContext';
-import bgHero from '../../assets/img/bg-hero.jpg';
+import { changeBodyBackground } from '../../utils/bodyChanger';
 
 const StyledForm = styled.form`
     width: 100%;
@@ -33,8 +33,7 @@ const Register = () => {
     const { register } = useAuth();
 
     useEffect(() => {
-        document.body.style.background = `linear-gradient(rgb(65, 81, 119, 8.9),rgb(29, 93, 110, 0.7)), url(${bgHero}) no-repeat fixed center center`;
-        document.body.style.height = '85vh';
+        changeBodyBackground();
     }, []);
 
     const handleSubmit = async (e) => {
@@ -81,7 +80,7 @@ const Register = () => {
                 <StyledLabel htmlFor='floatingConfirmPassword'>Confirm Password</StyledLabel>
             </div>
 
-            <div className='checkbox mb-3'>
+            <div className='mb-3 text-left mt-2'>
                 <label className='text-light'>
                     Already have account? Login <Link to='/login'>Here</Link>
                 </label>
