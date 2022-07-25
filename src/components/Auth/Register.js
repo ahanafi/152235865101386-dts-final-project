@@ -66,17 +66,17 @@ const Register = () => {
             {error && <Alert variant="danger">{error}</Alert>}
             
             <div className='form-floating'>
-                <Form.Control name='email' type='email' id='floatingInput' placeholder='email' />
+                <Form.Control name='email' type='email' required id='floatingInput' placeholder='email' />
                 <StyledLabel htmlFor='floatingInput'>Email address</StyledLabel>
             </div>
 
             <div className='form-floating'>
-                <Form.Control name='password' type='password' className='form-control' id='floatingPassword' placeholder='Password' />
+                <Form.Control name='password' type='password' required className='form-control' id='floatingPassword' placeholder='Password' />
                 <StyledLabel htmlFor='floatingPassword'>Password</StyledLabel>
             </div>
 
             <div className='form-floating'>
-                <Form.Control name='password_confirmation' type='password' className='form-control' id='floatingConfirmPassword' placeholder='Retype Password' />
+                <Form.Control name='password_confirmation' type='password' required className='form-control' id='floatingConfirmPassword' placeholder='Retype Password' />
                 <StyledLabel htmlFor='floatingConfirmPassword'>Confirm Password</StyledLabel>
             </div>
 
