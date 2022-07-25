@@ -4,7 +4,14 @@
     text-decoration: none;
 }
 
+a, a:hover, a:visited, a:active {
+    text-decoration: none;
+    color: initial;
+}
+
+
 body {
     margin: 0;
     font-family: 'Quicksand', serif;
-  }
+    background: #fefefe;
+}
